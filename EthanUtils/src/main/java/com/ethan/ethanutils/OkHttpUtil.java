@@ -1,20 +1,21 @@
 package com.ethan.ethanutils;
 
-import okhttp3.*;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 
 /**
- * NOTE:
  *
- * @author wxc 2021/11/22
- * @version 1.0.0
+ * @author Ethan 2021/11/22
  */
 public class OkHttpUtil {
+
     /**
-     * 使用Okhttp发起网络请求
+     * 使用Okhttp发起异步网络请求
      * @param address URL地址
      * @param callback 网络请求结果监听
      */
-    public static void sendRequestWithOkHttp(String address, Callback callback) {
+    public static void sendRequestAsync(String address, Callback callback) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .url(address)

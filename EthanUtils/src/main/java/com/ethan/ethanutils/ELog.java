@@ -3,11 +3,12 @@ package com.ethan.ethanutils;
 import android.util.Log;
 
 /**
- * NOTE：日志过滤器 在Application的onCreate()中init即可
+ * 日志过滤器 在Application的onCreate()中init可以自定义 TAG
  *
  * @author Ethan 2022/6/10
  */
 public class ELog {
+
     private static final int VERBOSE = 1;
     private static final int DEBUG = 2;
     private static final int INFO = 3;
@@ -27,27 +28,32 @@ public class ELog {
     }
 
     public static void v(String msg) {
-        if (level <= VERBOSE)
+        if (level <= VERBOSE) {
             Log.v(TAG, msg);
+        }
     }
 
     public static void d(String msg) {
-        if (level <= DEBUG)
+        if (level <= DEBUG) {
             Log.d(TAG, msg);
+        }
     }
 
     public static void i(String msg) {
-        if (level <= INFO)
+        if (level <= INFO) {
             Log.i(TAG, msg);
+        }
     }
 
     public static void w(String msg) {
-        if (level <= WARN)
+        if (level <= WARN) {
             Log.w(TAG, msg);
+        }
     }
 
     public static void e(String msg) {
-        if (level <= ERROR)
+        if (level <= ERROR) {
             Log.e(TAG, msg);
+        }
     }
 }
