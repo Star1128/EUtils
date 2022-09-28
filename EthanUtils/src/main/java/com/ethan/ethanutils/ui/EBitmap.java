@@ -1,4 +1,4 @@
-package com.ethan.ethanutils;
+package com.ethan.ethanutils.ui;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -10,13 +10,11 @@ import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 
 /**
- * NOTE:
  * Bitmap采样压缩
  *
- * @author wxc 2021/11/14
- * @version 1.0.0
+ * @author Ethan 2021/11/14
  */
-public class BitmapUtil {
+public class EBitmap {
 
     /**
      * 提供图片文件路径,使用临近采样压缩Bitmap

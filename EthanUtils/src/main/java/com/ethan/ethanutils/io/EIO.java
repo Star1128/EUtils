@@ -1,4 +1,4 @@
-package com.ethan.ethanutils;
+package com.ethan.ethanutils.io;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.io.IOException;
  *
  * @author Ethan 2021/11/27
  */
-public class IOUtil {
+public class EIO {
 
     /**
      * 关闭IO流

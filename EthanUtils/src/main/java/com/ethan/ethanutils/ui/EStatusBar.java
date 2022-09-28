@@ -1,4 +1,4 @@
-package com.ethan.ethanutils;
+package com.ethan.ethanutils.ui;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -10,7 +10,7 @@ import android.view.WindowManager;
  *
  * @author Ethan 2021/11/22
  */
-public class StatusBarUtil {
+public class EStatusBar {
 
     /**
      * 实现沉浸式状态栏（不确定能不能用）

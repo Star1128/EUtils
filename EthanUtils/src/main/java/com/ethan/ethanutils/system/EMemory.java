@@ -1,9 +1,9 @@
-package com.ethan.ethanutils;
+package com.ethan.ethanutils.system;
 
 /**
  * @author Ethan 2021/11/22
  */
-public class MemoryUtil {
+public class EMemory {
 
     /**
      * 获取应用占用内存大小

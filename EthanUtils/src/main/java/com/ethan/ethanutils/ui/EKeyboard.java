@@ -1,4 +1,4 @@
-package com.ethan.ethanutils;
+package com.ethan.ethanutils.ui;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.view.inputmethod.InputMethodManager;
 /**
  * @author Ethan 2021/11/22
  */
-public class KeyboardUtil {
+public class EKeyboard {
 
     /**
      * 关闭软键盘

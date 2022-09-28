@@ -1,4 +1,4 @@
-package com.ethan.ethanutils;
+package com.ethan.ethanutils.log;
 
 import android.util.Log;
 

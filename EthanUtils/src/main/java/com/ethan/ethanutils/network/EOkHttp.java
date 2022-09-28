@@ -1,4 +1,4 @@
-package com.ethan.ethanutils;
+package com.ethan.ethanutils.network;
 
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -8,7 +8,7 @@ import okhttp3.Request;
  *
  * @author Ethan 2021/11/22
  */
-public class OkHttpUtil {
+public class EOkHttp {
 
     /**
      * 使用Okhttp发起异步网络请求
