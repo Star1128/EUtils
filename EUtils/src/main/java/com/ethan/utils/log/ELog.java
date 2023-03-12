@@ -6,7 +6,7 @@ import android.util.Log;
 /**
  * 日志过滤器
  * 在 Application 的 onCreate() 中可以初始化
- * 不初始化则 TAG 默认为调用者类名
+ * 不初始化则 TAG 默认为调用者类名+方法名
  *
  * @author Ethan 2022/6/10
  */
@@ -45,7 +45,9 @@ public class ELog {
 
     public static void v(String msg) {
         if (TextUtils.isEmpty(TAG)) {
-            TAG = new Exception().getStackTrace()[1].getClassName();
+            String classFullName = new Exception().getStackTrace()[1].getClassName(); // 获取调用者的类名
+            String methodName = new Exception().getStackTrace()[1].getMethodName(); // 获取调用者的方法名
+            TAG = assemble(classFullName, methodName);
         }
         if (level <= VERBOSE) {
             Log.v(TAG, msg);
@@ -53,30 +55,51 @@ public class ELog {
     }
 
     public static void d(String msg) {
-        TAG = new Exception().getStackTrace()[1].getClassName();
+        if (TextUtils.isEmpty(TAG)) {
+            String classFullName = new Exception().getStackTrace()[1].getClassName(); // 获取调用者的类名
+            String methodName = new Exception().getStackTrace()[1].getMethodName(); // 获取调用者的方法名
+            TAG = assemble(classFullName, methodName);
+        }
         if (level <= DEBUG) {
             Log.d(TAG, msg);
         }
     }
 
     public static void i(String msg) {
-        TAG = new Exception().getStackTrace()[1].getClassName();
+        if (TextUtils.isEmpty(TAG)) {
+            String classFullName = new Exception().getStackTrace()[1].getClassName(); // 获取调用者的类名
+            String methodName = new Exception().getStackTrace()[1].getMethodName(); // 获取调用者的方法名
+            TAG = assemble(classFullName, methodName);
+        }
         if (level <= INFO) {
             Log.i(TAG, msg);
         }
     }
 
     public static void w(String msg) {
-        TAG = new Exception().getStackTrace()[1].getClassName();
+        if (TextUtils.isEmpty(TAG)) {
+            String classFullName = new Exception().getStackTrace()[1].getClassName(); // 获取调用者的类名
+            String methodName = new Exception().getStackTrace()[1].getMethodName(); // 获取调用者的方法名
+            TAG = assemble(classFullName, methodName);
+        }
         if (level <= WARN) {
             Log.w(TAG, msg);
         }
     }
 
     public static void e(String msg) {
-        TAG = new Exception().getStackTrace()[1].getClassName();
+        if (TextUtils.isEmpty(TAG)) {
+            String classFullName = new Exception().getStackTrace()[1].getClassName(); // 获取调用者的类名
+            String methodName = new Exception().getStackTrace()[1].getMethodName(); // 获取调用者的方法名
+            TAG = assemble(classFullName, methodName);
+        }
         if (level <= ERROR) {
             Log.e(TAG, msg);
         }
+    }
+
+    private static String assemble(String classFullName, String methodName) {
+        String className = classFullName.substring(classFullName.lastIndexOf(".") + 1);
+        return className + "#" + methodName;
     }
 }
