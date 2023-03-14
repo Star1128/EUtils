@@ -11,6 +11,7 @@ import java.security.NoSuchAlgorithmException;
 public class EMD5 {
     /**
      * 字符串转 MD5
+     * 产物是数字+小写字母
      */
     public static String md5(String string) {
         if (TextUtils.isEmpty(string)) {
